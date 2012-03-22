@@ -1,0 +1,21 @@
+development: &development
+  adapter: postgresql
+  database: baseball_hack_day
+  username: postgres
+  password:
+  host: localhost
+  port: 5432
+
+production:
+  <<: *development
+
+test: &test
+  adapter: postgresql
+  database: baseball_hack_day_test
+  username: postgres
+  password:
+  host: localhost
+  port: 5432
+
+cucumber:
+  <<: *test
