@@ -12,4 +12,14 @@ task :import => :environment do
     player = Player.find_or_create_by(player_season)
     Season.create(player_season.slice(*Season.column_names).merge(:player_id => player.id))
   end
+
+
+  player_totals = CSV.parse(File.open("#{Rails.root}/lib/assets/bos-totals.csv"))
+
+  headers = player_totals.shift
+
+  player_totals.map{|row| Hash[headers.zip(row)] }.each do |player_total|
+    player = Player.find_or_create_by(player_total)
+    player.update_attributes(player_total)
+  end
 end
