@@ -3,6 +3,8 @@ BaseballHackDayPre::Application.routes.draw do
     resources :seasons, only: [:index, :show]
   end
 
+  resources :seasons, only: [:index, :show]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

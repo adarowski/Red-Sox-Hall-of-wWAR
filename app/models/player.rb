@@ -7,6 +7,12 @@ class Player < ActiveRecord::Base
   end
 
   def as_json(options = {})
-    attributes.slice(*(Player.column_names - ['created_at', 'updated_at']))
+    content = attributes.slice(*(Player.column_names - ['created_at', 'updated_at']))
+
+    if options[:with_seasons]
+      content.merge!(seasons: seasons.as_json)
+    end
+
+    content
   end
 end
