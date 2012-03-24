@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
   def index
     respond_to do |format|
-      format.html { @players = Player.all }
+      format.html { @players = Player.order("wwar_norm DESC") }
 
       format.json do
         if params[:with_seasons]

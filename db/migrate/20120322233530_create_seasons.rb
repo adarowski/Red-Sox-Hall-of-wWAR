@@ -35,7 +35,7 @@ class CreateSeasons < ActiveRecord::Migration
       t.decimal :obp
       t.decimal :slg
       t.decimal :ops
-      t.integer :pos
+      t.string  :pos
       t.integer :p_g
       t.integer :p_gs
       t.integer :p_cg

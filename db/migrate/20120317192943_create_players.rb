@@ -5,7 +5,7 @@ class CreatePlayers < ActiveRecord::Migration
       t.string :last_name
       t.string :full_name
 
-      t.integer :pos
+      t.string  :pos
       t.decimal :war_pos
       t.decimal :war_p
       t.decimal :war_tot
