@@ -37,7 +37,7 @@ module PlayersHelper
   def player_class player
     [
       "pos-#{player.pos}",
-      player.hof_status || 'no_hof',
+      player.hof_status || '',
       (player.wwar_status ? 'wwar' : ''),
       (player.future_wwar ? 'future' : '')
     ].join(' ').squish
