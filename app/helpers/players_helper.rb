@@ -49,7 +49,7 @@ module PlayersHelper
   end
 
   def human_column(column)
-    column.sub(/^p_/, '').humanize.upcase
+    column.sub(/^[pb]_/, '').humanize.upcase.sub(/WWAR /, 'WWAR/')
   end
 
   def player_total_stats player
