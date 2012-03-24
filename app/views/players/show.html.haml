@@ -7,21 +7,25 @@
 
     %table#player-totals
       - columns, values = player_total_stats(@player)
+      %thead
+        %tr
+          - columns.each do |col|
+            %th
+              %abbr{:title => col.last}= col.first
+      %tbody
+        %tr
+          - values.each do |value|
+            %td= value
+
+  %table#player-seasons
+    - columns, rows = player_season_stats(@player)
+    %thead
       %tr
         - columns.each do |col|
           %th
             %abbr{:title => col.last}= col.first
-      %tr
-        - values.each do |value|
-          %td= value
-
-  %table#player-seasons
-    - columns, rows = player_season_stats(@player)
-    %tr
-      - columns.each do |col|
-        %th
-          %abbr{:title => col.last}= col.first
-    - rows.each do |values|
-      %tr
-        - values.each do |value|
-          %td= value
+    %tbody
+      - rows.each do |values|
+        %tr
+          - values.each do |value|
+            %td= value

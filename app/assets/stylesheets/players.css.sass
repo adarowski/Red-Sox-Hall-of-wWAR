@@ -2,7 +2,7 @@
 
 body
   font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, sans-serif
-  background: #fff
+  background-color: lighten($red_sox_blue, 75%)
   font-size: 14px
   margin: 0
 
@@ -57,6 +57,7 @@ header
 
 #players, #player
   padding: 20px
+  background-color: #FFF
 
 ol
   list-style: none
@@ -106,6 +107,7 @@ ol
           margin-bottom: 2px
 
 #toggles
+  background: #fff
   padding: 20px
   dl
     +reset
@@ -145,19 +147,5 @@ table#player-seasons
   thead
     th
       background-color: #eee
-      padding-right: 18px
-    tr
-      .header
-        background-image: url(http://darowski.com/scripts/bg.gif)
-        background-repeat: no-repeat
-        background-position: center right
-        cursor: pointer
-      & .headerSortUp
-        background-image: url(http://darowski.com/scripts/asc.gif)
-      & .headerSortDown
-        background-image: url(http://darowski.com/scripts/desc.gif)
-      & .headerSortDown, & .headerSortUp
-        background-color: #666
-        color: #FFF
-  tbody th, thead tr th:first-child
+  th:first-child, td:first-child
     text-align: left
