@@ -1,72 +1,81 @@
+%section#about
+  %p
+    This project is based on the <a href="http://darowski.com/hall-of-wwar">Hall of wWAR</a>, an alternate Hall of Fame populated by a single statistic.
+    That statistic, <strong>weighted Wins Above Replacement</strong> (or <strong>wWAR</strong>), combines the value of all aspects of a player’s contributions (hitting, pitching,
+    fielding, baserunning, position, etc.) and gives additional adjustments for peak performance, playoff heroics, and season length.
+    Read more <a href="http://darowski.com/hall-of-wwar">about wWAR</a> for more information.
+  %p
+    The Red Sox Hall of wWAR takes the same approach, but instead re-populates the <a href="http://boston.redsox.mlb.com/bos/history/feature_hall_of_fame.jsp">Red Sox Hall of Fame</a>. There are 56 players in the Red Sox Hall of Fame. 
+
 %section#toggles
   %dl
     %dt Filter:
-    %dd
-      %a#show-all{:href => "#show-all"}
-        Pitchers and Position Players
-        %span (208)
-    %dd
-      %a#show-pos{:href => "#show-pos"}
-        Position Players Only
-        %span (144)
-    %dd
-      %a#show-p{:href => "#show-p"}
-        Pitchers Only
-        %span (64)
+    %dd<
+      %a#show-all{:href => "#show-hall"}
+        Red Sox Hall of wWAR
+        %span (56)
+    %dd<>
+      %a#show-pos{:href => "#show-all"}
+        All Red Sox Players with 5+ WAR
+        %span (189)
   %dl
     %dt Positions:
-    %dd
+    %dd<
+      %a#show-p{:href => "#show-p"}
+        P
+        %span (15)
+    %dd<>
       %a#show-c{:href => "#show-c"}
         C
         %span (15)
-    %dd
+    %dd<>
       %a#show-1b{:href => "#show-1b"}
         1B
         %span (23)
-    %dd
+    %dd<>
       %a#show-2b{:href => "#show-2b"}
         2B
         %span (17)
-    %dd
+    %dd<>
       %a#show-3b{:href => "#show-3b"}
         3B
         %span (17)
-    %dd
+    %dd<>
       %a#show-ss{:href => "#show-ss"}
         SS
         %span (17)
-    %dd
+    %dd<>
       %a#show-lf{:href => "#show-lf"}
         LF
         %span (21)
-    %dd
+    %dd<>
       %a#show-cf{:href => "#show-cf"}
         CF
         %span (12)
-    %dd
+    %dd<>
       %a#show-rf{:href => "#show-rf"}
         RF
         %span (20)
-    %dd
+    %dd<>
       %a#show-dh{:href => "#show-dh"}
         DH
         %span (2)
   %dl
     %dt Adjustments:
-    %dd
+    %dd<
       %a#whos-in{:href => "#whos-in"}
         Who's In?
         %span (63)
-    %dd
+    %dd<>
       %a#whos-out{:href => "#whos-out"}
         Who's Out?
         %span (63)
-    %dd
+    %dd<>
       %a#whos-next{:href => "#whos-next"}
         Who's Next?
         %span (38)
 
-%ol
+%ol#hall
   - @players.each do |player|
     %li{:class => player_class(player)}
       = link_to(player_path(player)) do
