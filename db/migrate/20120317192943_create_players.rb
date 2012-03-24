@@ -17,8 +17,8 @@ class CreatePlayers < ActiveRecord::Migration
       t.decimal :c_pct
       t.decimal :rp_pct
       t.decimal :wwar_norm
-      t.boolean :is_pitcher, default: false
-      t.boolean :is_hitter, default: false
+      t.boolean :is_pitcher, :default => false
+      t.boolean :is_hitter, :default => false
       t.integer :b_pa
       t.integer :b_ab
       t.integer :b_h
@@ -48,6 +48,6 @@ class CreatePlayers < ActiveRecord::Migration
 
       t.timestamps
     end
-    add_index :players, :full_name, unique: true
+    add_index :players, :full_name, :unique => true
   end
 end

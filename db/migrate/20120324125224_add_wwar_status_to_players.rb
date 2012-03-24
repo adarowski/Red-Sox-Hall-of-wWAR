@@ -1,6 +1,6 @@
 class AddWwarStatusToPlayers < ActiveRecord::Migration
   def change
-    add_column :players, :wwar_status, :boolean, default: false
+    add_column :players, :wwar_status, :boolean, :default => false
 
     execute %( UPDATE players SET wwar_status = true WHERE id IN (
                  SELECT id FROM players
