@@ -25,7 +25,7 @@ header
   font-family: 'Lora', serif
   &#main
     background-color: $red_sox_red
-    padding: 20px
+    padding: 10px 20px
     h1
       font-size: 48px
       color: #fff
@@ -71,9 +71,13 @@ header
     &:first-child
       margin-top: 0
 
-#players, #player
+#players
   padding: 20px
   background-color: #FFF
+
+#player
+  @extend #players
+  padding-bottom: 120px
 
 ol
   list-style: none
@@ -136,6 +140,7 @@ ol
     +reset
     &.active a
       background-color: #FF9
+      border-color: #CCC
     a
       color: #333
       +toggle_button
@@ -183,3 +188,6 @@ table
       background-color: $red_sox_blue
     &#rs-future
       background-color: $red_sox_blue
+
+#seasons-container
+  overflow: auto
