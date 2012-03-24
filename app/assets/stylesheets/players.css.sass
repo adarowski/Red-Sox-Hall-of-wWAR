@@ -167,3 +167,19 @@ table
         background-color: #eee
     th:first-child, td:first-child
       text-align: left
+
+#honors
+  +reset
+  margin: 20px 0
+  list-style: none
+  li
+    +reset
+    color: #fff
+    display: inline-block
+    padding: 4px 8px
+    &#rs-hof
+      background-color: $red_sox_red
+    &#rs-wwar
+      background-color: $red_sox_blue
+    &#rs-future
+      background-color: $red_sox_blue
