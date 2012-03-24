@@ -11,14 +11,14 @@
   %dl
     %dt Filter:
     %dd<
-      %a#show-all{:href => "#show-hall"}
+      %a#show-hall{:href => "#show-hall"}
         Red Sox Hall of wWAR
         %span (56)
     %dd<>
-      %a#show-pos{:href => "#show-all"}
+      %a#show-all{:href => "#show-all"}
         All Red Sox Players with 5+ WAR
         %span (189)
-  %dl
+  %dl#positions
     %dt Positions:
     %dd<
       %a#show-p{:href => "#show-p"}
@@ -60,7 +60,7 @@
       %a#show-dh{:href => "#show-dh"}
         DH
         %span (2)
-  %dl
+  %dl#adjustments
     %dt Adjustments:
     %dd<
       %a#whos-in{:href => "#whos-in"}
@@ -75,7 +75,7 @@
         Who's Next?
         %span (38)
 
-%ol#hall
+%ol#players
   - @players.each do |player|
     %li{:class => player_class(player)}
       = link_to(player_path(player)) do

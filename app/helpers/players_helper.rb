@@ -20,7 +20,12 @@ module PlayersHelper
   ]
 
   def player_class player
-    [player.pos, player.hof_status || 'no_hof'].join(' ')
+    [
+      player.pos,
+      player.hof_status || 'no_hof',
+      (player.wwar_status ? 'wwar' : ''),
+      (player.future_wwar ? 'future' : '')
+    ].join(' ').squish
   end
 
   def player_image player
