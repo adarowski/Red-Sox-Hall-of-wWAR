@@ -12,7 +12,7 @@ task :import => :environment do
   Player.delete_all
   Season.delete_all
 
-  player_seasons = CSV.parse(File.open("#{Rails.root}/lib/assets/bos.csv"))
+  player_seasons = CSV.parse(File.open("#{Rails.root}/lib/assets/bos-seasons.csv"))
 
   headers = player_seasons.shift
 
