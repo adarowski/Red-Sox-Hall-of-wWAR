@@ -23,6 +23,10 @@ module PlayersHelper
     [player.pos, player.hof_status || 'no_hof'].join(' ')
   end
 
+  def player_image player
+    "images/#{player.first_name.gsub(/ /, '')}_#{player.last_name}.jpg".downcase
+  end
+
   def human_column(column)
     column.sub(/^p_/, '').humanize.upcase
   end
