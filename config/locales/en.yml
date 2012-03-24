@@ -2,4 +2,41 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  pos: Player's position
+  war_pos: WAR as a position player
+  war_p: WAR as a pitcher
+  war_tot: WAR as position player and pitcher together
+  war_162: Total WAR normalized for season length
+  wae: Wins Above Excellence
+  wam: Wins Above MVP
+  wwpa: Weighted Postseason Win Probability Added
+  wwar: Raw Weighted WAR (before catcher and relief pitcher adjustments)
+  c_pct: Percentage of career games as catcher
+  rp_pct: Percentage of career pitching games as reliever
+  wwar_norm: Normalized version of wWAR (based on catcher and relief pitcher adjustments)
+  b_pa: Plate appearances
+  b_ab: At bats
+  b_h: Hits
+  b_2b: Doubles
+  b_3b: Triples
+  b_hr: Home runs
+  b_bb: Walks
+  b_hbp: Hit by pitch
+  b_sf: Sacrifice flies
+  ba: Batting average
+  obp: On-base percentage
+  slg: Slugging percentage
+  ops_plus: Adjusted on-base plus slugging
+  p_w: Wins
+  p_l: Losses
+  p_sv: Saves
+  p_ip: Innings pitched
+  p_h: Hits allowed
+  p_er: Earned runs allowed
+  p_bb: Walks allowed
+  p_so: Strikeouts
+  p_hr: Home runs allowed
+  era: Earned run average
+  era_plus: Adjusted earned run average
+  hof_status: Status with the Red Sox Hall of Fame (hof, active, or ineligible)
+  induction_year: The year they were inducted

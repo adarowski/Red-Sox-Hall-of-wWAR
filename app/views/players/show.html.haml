@@ -1,3 +1,24 @@
-%h1 Players#show
-%p Find me in app/views/players/show.html.erb
-%p @player is #{@player.inspect}
+%h2= @player.full_name
+#player-position Position: #{@player.pos}
+
+%table#player-totals
+  - columns, values = player_total_stats(@player)
+  %tr
+    - columns.each do |col|
+      %th
+        %ABBR{title: col.last}= col.first
+  %tr
+    - values.each do |value|
+      %td= value
+
+%table#player-seasons
+  - columns, rows = player_season_stats(@player)
+  %tr
+    - columns.each do |col|
+      %th
+        %ABBR{title: col.last}= col.first
+  - rows.each do |values|
+    %tr
+      - values.each do |value|
+        %td= value
+
