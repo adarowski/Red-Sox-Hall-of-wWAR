@@ -1,24 +1,27 @@
-%h2= @player.full_name
-#player-position Position: #{@player.pos}
+%section#player
 
-%table#player-totals
-  - columns, values = player_total_stats(@player)
-  %tr
-    - columns.each do |col|
-      %th
-        %abbr{:title => col.last}= col.first
-  %tr
-    - values.each do |value|
-      %td= value
+  %header
+    %img{:src => player_image(@player), :alt => @player.full_name + ' Photo', :width => '90', :height => '135'}
+    %h1= @player.full_name
+    %span#player-position= @player.pos
 
-%table#player-seasons
-  - columns, rows = player_season_stats(@player)
-  %tr
-    - columns.each do |col|
-      %th
-        %abbr{:title => col.last}= col.first
-  - rows.each do |values|
+    %table#player-totals
+      - columns, values = player_total_stats(@player)
+      %tr
+        - columns.each do |col|
+          %th
+            %abbr{:title => col.last}= col.first
+      %tr
+        - values.each do |value|
+          %td= value
+
+  %table#player-seasons
+    - columns, rows = player_season_stats(@player)
     %tr
-      - values.each do |value|
-        %td= value
-
+      - columns.each do |col|
+        %th
+          %abbr{:title => col.last}= col.first
+    - rows.each do |values|
+      %tr
+        - values.each do |value|
+          %td= value

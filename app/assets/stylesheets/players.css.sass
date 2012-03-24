@@ -22,13 +22,30 @@ a
     text-decoration: underline
 
 header
-  background-color: $red_sox_red
-  padding: 20px
-  h1
-    font-family: 'Lora', serif
-    font-size: 48px
-    color: #fff
-    margin: 0
+  font-family: 'Lora', serif
+  &#main
+    background-color: $red_sox_red
+    padding: 20px
+    h1
+      font-size: 48px
+      color: #fff
+      margin: 0
+  #player &
+    position: relative
+    min-height: $photo_height
+    padding-left: $photo_width + 10px
+    background-color: lighten($red_sox_blue, 75%)
+    margin-bottom: 20px
+    h1
+      font-size: 36px
+      display: inline
+      padding-right: 20px
+    #player-position
+      font-size: 18px
+    img
+      position: absolute
+      top: 0
+      left: 0
 
 #about
   background-color: lighten($red_sox_red, 50%)
@@ -38,7 +55,7 @@ header
     &:first-child
       margin-top: 0
 
-#hall
+#players, #player
   padding: 20px
 
 ol
@@ -113,3 +130,34 @@ footer
     margin: 0
     color: #666
     font-size: 12px
+
+table#player-seasons
+  width: 100%
+  border-left: 1px solid #ccc
+  border-top: 1px solid #ccc
+  border-collapse: collapse
+  th, td
+    padding: 4px
+    border-right: 1px solid #ccc
+    border-bottom: 1px solid #ccc
+    text-align: right
+    vertical-align: top
+  thead
+    th
+      background-color: #eee
+      padding-right: 18px
+    tr
+      .header
+        background-image: url(http://darowski.com/scripts/bg.gif)
+        background-repeat: no-repeat
+        background-position: center right
+        cursor: pointer
+      & .headerSortUp
+        background-image: url(http://darowski.com/scripts/asc.gif)
+      & .headerSortDown
+        background-image: url(http://darowski.com/scripts/desc.gif)
+      & .headerSortDown, & .headerSortUp
+        background-color: #666
+        color: #FFF
+  tbody th, thead tr th:first-child
+    text-align: left

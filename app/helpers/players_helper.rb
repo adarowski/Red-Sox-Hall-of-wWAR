@@ -13,7 +13,7 @@ module PlayersHelper
     "year", "age", "war_pos", "war_p", "war_tot",
     "war_162", "wae", "wam",
     "b_g", "b_pa", "b_ab", "b_r", "b_h", "b_2b", "b_3b", "b_hr", "b_rbi",
-    "b_bb", "b_ibb", "b_so", "b_hbp", "b_sh", "b_sf", "b_gdp", "b_sb", "b_cs",
+    "b_bb", "b_so", "b_hbp", "b_sh", "b_sf", "b_gdp", "b_sb", "b_cs",
     "ba", "obp", "slg", "ops",
     "p_g", "p_gs", "p_cg", "p_sho", "p_gf", "p_w", "p_l", "p_sv", "p_ip",
     "p_h", "p_r", "p_er", "p_bb", "p_so", "era", "eraplus", "p_hr", "p_bf"
@@ -45,7 +45,7 @@ module PlayersHelper
   end
 
   def player_image player
-    "images/#{player.first_name.gsub(/ /, '')}_#{player.last_name}.jpg".downcase
+    "/images/#{player.first_name.gsub(/ /, '')}_#{player.last_name}.jpg".downcase
   end
 
   def human_column(column)

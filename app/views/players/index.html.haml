@@ -86,4 +86,4 @@
           %dd.position= player.pos
           %dd.value #{player.wwar_norm} wWAR
           %dd.photo
-            %img{:src => player_image(player)}/
+            %img{:src => player_image(player), :alt => player.full_name + ' Photo', :width => '90', :height => '135'}
