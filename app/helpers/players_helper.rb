@@ -6,7 +6,7 @@ module PlayersHelper
     # pitchers
     "era", "era_plus", "p_w", "p_l", "p_sv",
     # batters
-    "ba", "obp", "ops_plus", "slg",
+    "ba", "obp", "ops_plus", "slg"
   ]
 
   PLAYER_SEASON_STAT_ATTRIBUTES = [
@@ -49,21 +49,34 @@ module PlayersHelper
   end
 
   def human_column(column)
-    column.sub(/^[pb]_/, '').humanize.upcase.sub(/WAR /, 'WAR/')
+    column.sub(/^[pb]_/, '').humanize.upcase.sub(/WAR /, 'WAR/').sub('PLUS', '+')
   end
 
   def player_total_stats player
     columns = []
     values = []
 
-    player.attributes.slice(*PLAYER_TOTAL_STAT_ATTRIBUTES).each do |column, value|
-      unless value.blank?
+    PLAYER_TOTAL_STAT_ATTRIBUTES.each do |column|
+      unless player.attributes[column].blank?
         columns << [human_column(column), t(column)]
-        values << value
+        values << format_attribute(player, column)
       end
     end
 
     [columns, values]
+  end
+
+  def format_attribute(obj, column)
+    value = obj.attributes[column]
+
+    case column
+    when 'era'
+      sprintf("%.2f", value) if value.present?
+    when "ba", "obp", "ops", "slg"
+      sprintf("%.3f", value).sub(/^0/, '') if value.present?
+    else
+      value
+    end
   end
 
   def player_season_stats player
@@ -72,7 +85,7 @@ module PlayersHelper
     player.seasons.order("year ASC").each do |season|
       PLAYER_SEASON_STAT_ATTRIBUTES.each do |column|
         columns[column] ||= []
-        columns[column] << season.attributes[column]
+        columns[column] << format_attribute(season, column)
       end
     end
 
