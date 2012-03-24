@@ -67,12 +67,12 @@ module PlayersHelper
   end
 
   def player_season_stats player
-    columns = {}
+    columns = ActiveSupport::OrderedHash.new
 
     player.seasons.order("year ASC").each do |season|
-      season.attributes.slice(*PLAYER_SEASON_STAT_ATTRIBUTES).each do |column, value|
+      PLAYER_SEASON_STAT_ATTRIBUTES.each do |column|
         columns[column] ||= []
-        columns[column] << value
+        columns[column] << season.attributes[column]
       end
     end
 
