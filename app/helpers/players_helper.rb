@@ -58,7 +58,7 @@ module PlayersHelper
 
     PLAYER_TOTAL_STAT_ATTRIBUTES.each do |column|
       unless player.attributes[column].blank?
-        columns << [human_column(column), t(column)]
+        columns << [human_column(column), translation_or_default(column)]
         values << format_attribute(player, column)
       end
     end
@@ -94,8 +94,16 @@ module PlayersHelper
     end
 
     [
-      columns.keys.map{|c| [human_column(c), t(c)]},
+      columns.keys.map{|c| [human_column(c), translation_or_default(c)]},
       columns.values.transpose
     ]
+  end
+
+  def translation_or_default(key)
+    if I18n.backend.send(:lookup, :en, key).present?
+      t(key)
+    else
+      key.capitalize
+    end
   end
 end
