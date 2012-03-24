@@ -1,12 +1,11 @@
 module PlayersHelper
   PLAYER_TOTAL_STAT_ATTRIBUTES = [
     # everyone
-    "war_pos", "war_p", "war_tot", "war_162", "wae", "wam", "wwpa",
-    "wwar", "wwar_norm",
+    "wwar_norm", "war_pos", "war_p", "war_tot", "war_162", "wae", "wam", "wwpa",
     # pitchers
     "era", "era_plus", "p_w", "p_l", "p_sv",
     # batters
-    "ba", "obp", "ops_plus", "slg"
+    "ba", "obp", "slg", "ops_plus"
   ]
 
   PLAYER_SEASON_STAT_ATTRIBUTES = [
@@ -49,7 +48,7 @@ module PlayersHelper
   end
 
   def human_column(column)
-    column.sub(/^[pb]_/, '').humanize.upcase.sub(/WAR /, 'WAR/').sub('PLUS', '+')
+    column.sub(/^[pb]_/, '').humanize.upcase.sub(/ NORM/, '').sub(/WAR /, 'WAR/').sub('PLUS', '+')
   end
 
   def player_total_stats player

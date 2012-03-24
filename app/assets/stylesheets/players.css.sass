@@ -35,8 +35,9 @@ header
           color: #fff
   #player &
     position: relative
-    min-height: $photo_height
+    min-height: $photo_height - 5px
     padding-left: $photo_width + 10px
+    padding-top: 5px
     background-color: lighten($red_sox_blue, 75%)
     margin-bottom: 20px
     h1
@@ -49,6 +50,18 @@ header
       position: absolute
       top: 0
       left: 0
+    table
+      margin-top: 10px
+      th, td
+        text-align: center
+        padding: 4px 8px
+        &:first-child
+          border-left: none
+      th
+        background-color: lighten($red_sox_blue, 70%)
+      td:first-child
+        font-size: 32px
+        padding-top: 0
 
 #about
   background-color: lighten($red_sox_red, 50%)
@@ -136,19 +149,21 @@ footer
     color: #666
     font-size: 12px
 
-table#player-seasons
-  width: 100%
-  border-left: 1px solid #ccc
-  border-top: 1px solid #ccc
+table
   border-collapse: collapse
   th, td
     padding: 4px
-    border-right: 1px solid #ccc
-    border-bottom: 1px solid #ccc
-    text-align: right
     vertical-align: top
-  thead
-    th
-      background-color: #eee
-  th:first-child, td:first-child
-    text-align: left
+  &#player-seasons
+    width: 100%
+    border-left: 1px solid #ccc
+    border-top: 1px solid #ccc
+    th, td
+      border-right: 1px solid #ccc
+      border-bottom: 1px solid #ccc
+      text-align: right
+    thead
+      th
+        background-color: #eee
+    th:first-child, td:first-child
+      text-align: left
