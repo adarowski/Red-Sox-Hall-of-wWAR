@@ -5,8 +5,8 @@ class CreateSeasons < ActiveRecord::Migration
       t.integer :year
       t.integer :tm_g
       t.integer :age
-      t.integer :was_c
-      t.integer :was_rp
+      t.boolean :was_c, default: false
+      t.boolean :was_rp, default: false
       t.decimal :war_pos
       t.decimal :war_p
       t.decimal :war_tot

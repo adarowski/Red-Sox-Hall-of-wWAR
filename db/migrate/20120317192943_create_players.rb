@@ -17,8 +17,8 @@ class CreatePlayers < ActiveRecord::Migration
       t.decimal :c_pct
       t.decimal :rp_pct
       t.decimal :wwar_norm
-      t.integer :is_pitcher
-      t.integer :is_hitter
+      t.boolean :is_pitcher, default: false
+      t.boolean :is_hitter, default: false
       t.integer :b_pa
       t.integer :b_ab
       t.integer :b_h
@@ -43,7 +43,7 @@ class CreatePlayers < ActiveRecord::Migration
       t.integer :p_hr
       t.decimal :era
       t.integer :era_plus
-      t.integer :hof_status
+      t.string :hof_status
       t.integer :induction_year
 
       t.timestamps

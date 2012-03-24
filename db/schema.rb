@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(:version => 20120322233530) do
     t.decimal  "c_pct"
     t.decimal  "rp_pct"
     t.decimal  "wwar_norm"
-    t.integer  "is_pitcher"
-    t.integer  "is_hitter"
+    t.boolean  "is_pitcher",     :default => false
+    t.boolean  "is_hitter",      :default => false
     t.integer  "b_pa"
     t.integer  "b_ab"
     t.integer  "b_h"
@@ -55,10 +55,10 @@ ActiveRecord::Schema.define(:version => 20120322233530) do
     t.integer  "p_hr"
     t.decimal  "era"
     t.integer  "era_plus"
-    t.integer  "hof_status"
+    t.string   "hof_status"
     t.integer  "induction_year"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                        :null => false
+    t.datetime "updated_at",                        :null => false
   end
 
   add_index "players", ["full_name"], :name => "index_players_on_full_name", :unique => true
@@ -68,8 +68,8 @@ ActiveRecord::Schema.define(:version => 20120322233530) do
     t.integer  "year"
     t.integer  "tm_g"
     t.integer  "age"
-    t.integer  "was_c"
-    t.integer  "was_rp"
+    t.boolean  "was_c",      :default => false
+    t.boolean  "was_rp",     :default => false
     t.decimal  "war_pos"
     t.decimal  "war_p"
     t.decimal  "war_tot"
@@ -120,8 +120,8 @@ ActiveRecord::Schema.define(:version => 20120322233530) do
     t.integer  "p_hr"
     t.integer  "p_bf"
     t.decimal  "r_pct"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   add_index "seasons", ["player_id"], :name => "index_seasons_on_player_id"
