@@ -22,4 +22,8 @@ class Player < ActiveRecord::Base
 
     content
   end
+
+  def to_param
+    full_name.gsub(/ /, '-')
+  end
 end

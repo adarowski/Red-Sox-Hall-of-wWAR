@@ -15,7 +15,7 @@ class PlayersController < ApplicationController
 
   def show
     respond_to do |format|
-      format.html { @player = Player.find_by_id(params[:id]) }
+      format.html { @player = Player.find_by_full_name(params[:id].gsub(/-/, ' ')) }
 
       format.json do
         if params[:with_seasons]
