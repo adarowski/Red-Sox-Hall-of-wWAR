@@ -1,9 +1,9 @@
 class PlayersController < ApplicationController
   def index
     if params[:with_seasons]
-      render json: Player.all(include: :seasons).as_json(with_seasons: true)
+      render json: Player.all(include: :seasons).as_json(with_seasons: true, view: :index)
     else
-      render json: Player.all.as_json
+      render json: Player.all.as_json(view: :index)
     end
   end
 
