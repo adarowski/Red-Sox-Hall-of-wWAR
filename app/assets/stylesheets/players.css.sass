@@ -30,6 +30,7 @@ header
       font-size: 48px
       color: #fff
       margin: 0
+      text-shadow: #666 0px 0px 12px
       a
         &:link, &:visited, &:hover, &:active
           color: #fff
@@ -65,6 +66,8 @@ header
 
 #about
   background-color: lighten($red_sox_red, 50%)
+  border-bottom: 1px solid lighten($red_sox_red, 45%)
+  font-size: 12px
   padding: 20px
   p
     margin: 10px 0 0
@@ -146,7 +149,7 @@ ol
       +toggle_button
 
 footer
-  border-top: 1px solid lighten($red_sox_blue, 60%)
+  border-top: 1px solid lighten($red_sox_blue, 70%)
   background-color: lighten($red_sox_blue, 75%)
   padding: 20px 20px 120px
   p
@@ -163,6 +166,8 @@ table
     width: 100%
     border-left: 1px solid #ccc
     border-top: 1px solid #ccc
+    tr:hover
+      background-color: #FFc
     th, td
       border-right: 1px solid #ccc
       border-bottom: 1px solid #ccc
