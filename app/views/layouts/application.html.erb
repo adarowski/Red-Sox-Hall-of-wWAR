@@ -1,12 +1,21 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-  <title>BaseballHackDayPre</title>
+  <meta charset="UTF-8">
+  <title>Red Sox Hall of wWAR</title>
+  <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
+
+<header>
+  <h1>Red Sox Hall of wWAR</h1>
+</header>
 
 <%= yield %>
 

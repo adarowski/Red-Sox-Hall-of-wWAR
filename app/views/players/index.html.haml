@@ -1,3 +1,80 @@
-%h1 Players#index
-%p Find me in app/views/players/index.html.haml
-%p @players is #{@players.inspect}
+%section#toggles
+  %dl
+    %dt Filter:
+    %dd
+      %a#show-all{:href => "#show-all"}
+        Pitchers and Position Players
+        %span (208)
+    %dd
+      %a#show-pos{:href => "#show-pos"}
+        Position Players Only
+        %span (144)
+    %dd
+      %a#show-p{:href => "#show-p"}
+        Pitchers Only
+        %span (64)
+  %dl
+    %dt Positions:
+    %dd
+      %a#show-c{:href => "#show-c"}
+        C
+        %span (15)
+    %dd
+      %a#show-1b{:href => "#show-1b"}
+        1B
+        %span (23)
+    %dd
+      %a#show-2b{:href => "#show-2b"}
+        2B
+        %span (17)
+    %dd
+      %a#show-3b{:href => "#show-3b"}
+        3B
+        %span (17)
+    %dd
+      %a#show-ss{:href => "#show-ss"}
+        SS
+        %span (17)
+    %dd
+      %a#show-lf{:href => "#show-lf"}
+        LF
+        %span (21)
+    %dd
+      %a#show-cf{:href => "#show-cf"}
+        CF
+        %span (12)
+    %dd
+      %a#show-rf{:href => "#show-rf"}
+        RF
+        %span (20)
+    %dd
+      %a#show-dh{:href => "#show-dh"}
+        DH
+        %span (2)
+  %dl
+    %dt Adjustments:
+    %dd
+      %a#whos-in{:href => "#whos-in"}
+        Who's In?
+        %span (63)
+    %dd
+      %a#whos-out{:href => "#whos-out"}
+        Who's Out?
+        %span (63)
+    %dd
+      %a#whos-next{:href => "#whos-next"}
+        Who's Next?
+        %span (38)
+
+%ol
+  - @players.each do |player|
+    %li{:class => player_class(player)}
+      = link_to(player_path(player)) do
+        %dl
+          %dt
+            %span.first-name= player.first_name
+            %span.last-name= player.last_name
+          %dd.position= player.pos
+          %dd.value #{player.wwar_norm} wWAR
+          %dd.photo
+            %img{:src => "images/default.jpg"}/

@@ -1,0 +1,53 @@
+// mixins
+
+=border_radius($radius)
+  -moz-border-radius: $radius
+  -webkit-border-radius: $radius
+  border-radius: $radius
+
+=box_shadow($color, $values)
+  -webkit-box-shadow: $color $values
+  -moz-box-shadow: $color $values
+  box-shadow: $color $values
+
+=transition($property, $speed)
+  -webkit-transition: $property $speed
+  -moz-transition: $property $speed
+  transition: $property $speed
+
+$player_width: 200px
+$photo_height: 135px
+$photo_width: 90px
+
+$red_sox_blue: #0E2B55
+$red_sox_red: #BD3039
+
+=reset
+  margin: 0
+  padding: 0
+
+=toggle_button
+  +border_radius(10px)
+  padding: 2px 12px
+  background-color: #EEE
+  border: 1px solid #DDD
+  margin: 0 0 4px
+  white-space: nowrap
+  cursor: pointer
+  &:hover
+    border-color: #CCC
+  &.yah
+    background-color: #FF9
+  span
+    font-size: 11px
+    color: #666
+
+=popup
+  +box_shadow(#AAA, 0px 0px 10px)
+  +border_radius(10px)
+  display: block
+  width: auto
+  border: 2px solid #ccc
+  background-color: fade_out(white, 0.05)
+  z-index: 1
+  padding: 10px

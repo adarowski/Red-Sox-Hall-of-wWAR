@@ -1,2 +1,87 @@
+@import mixins
+
 body
-  background: red
+  font-family: "Lucida Grande", "Lucida Sans Unicode", Helvetica, sans-serif
+  background: #fff
+  font-size: 14px
+  margin: 0
+
+header, footer, nav, section, small
+  display: block
+
+a
+  text-decoration: none
+  &:link, &:visited
+    color: $red_sox_blue
+  &:hover, &:active
+    color: $red_sox_red
+  &:active
+    text-decoration: underline
+
+h1
+  font-family: 'Lora', serif
+  font-size: 48px
+
+ol
+  list-style: none
+  +reset
+  li
+    +reset
+    display: inline-block
+    text-align: center
+    width: $player_width
+    margin-bottom: 40px
+    a
+      color: #000
+      display: block
+      text-decoration: none
+      &:hover
+        background-color: #eee
+    dl
+      +reset
+      position: relative
+      padding: 20px 0
+      dt
+        +reset
+        padding-top: $photo_height + 20px
+        .first-name
+          display: block
+          color: #666
+        .last-name
+          display: block
+          font-weight: bold
+          font-size: 18px
+          text-transform: uppercase
+          margin: 4px 0 8px
+      dd
+        +reset
+        font-size: 13px
+        color: #666
+        &.photo
+          width: $player_width
+          position: absolute
+          top: 20px
+          left: 0
+          text-align: center
+          img
+            border: 4px solid #CCC
+            padding: 1px
+        &.position
+          margin-bottom: 2px
+
+#toggles
+  width: 1120px
+  margin: 20px 0
+  dl
+    margin: 0
+  dt
+    font-weight: bold
+    margin: 10px 0 5px
+    display: inline-block
+  dd
+    display: inline-block
+    margin: 0
+    padding: 0
+    a
+      color: #333
+      +toggle_button
