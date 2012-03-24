@@ -17,14 +17,16 @@
           - values.each do |value|
             %td= value
 
-  // if any of the following is true, render the ul
-  %ul#honors
-    // if his hof_status is hof and induction_year
-    %li#rs-hof Member of Red Sox Hall of Fame (2002)
-    // if he is among the group of 56 players
-    %li#rs-wwar Member of Red Sox Hall of wWAR
-    // if he is among the group of 15 future players
-    %li#rs-future Future Member of Red Sox Hall of wWAR
+  - if has_honors?
+    %ul#honors
+      - if @player.hof_status == 'hof'
+        %li#rs-hof Member of Red Sox Hall of Fame (#{@player.induction_year})
+
+      - if @player.wwar_status
+        %li#rs-wwar Member of Red Sox Hall of wWAR
+
+      - if @player.future_wwar
+        %li#rs-future Future Member of Red Sox Hall of wWAR
 
   %table#player-seasons
     - columns, rows = player_season_stats(@player)

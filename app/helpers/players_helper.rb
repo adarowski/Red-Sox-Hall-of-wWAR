@@ -99,6 +99,10 @@ module PlayersHelper
     ]
   end
 
+  def has_honors?
+    @player.hof_status == 'hof' || @player.wwar_status || @player.future_wwar
+  end
+
   def translation_or_default(key)
     if I18n.backend.send(:lookup, :en, key).present?
       t(key)
