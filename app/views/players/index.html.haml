@@ -13,67 +13,67 @@
     %dd<
       %a#show-hall{:href => "#show-hall"}
         Red Sox Hall of wWAR
-        %span (56)
+        %span (#{wwar_hall_count})
     %dd<>
       %a#show-all{:href => "#show-all"}
         All Red Sox Players with 5+ WAR
-        %span (189)
+        %span (#{@players.size})
   %dl#positions
     %dt Positions:
     %dd<
       %a#show-p{:href => "#show-p"}
         P
-        %span (15)
+        %span
     %dd<>
       %a#show-c{:href => "#show-c"}
         C
-        %span (15)
+        %span
     %dd<>
       %a#show-1b{:href => "#show-1b"}
         1B
-        %span (23)
+        %span
     %dd<>
       %a#show-2b{:href => "#show-2b"}
         2B
-        %span (17)
+        %span
     %dd<>
       %a#show-3b{:href => "#show-3b"}
         3B
-        %span (17)
+        %span
     %dd<>
       %a#show-ss{:href => "#show-ss"}
         SS
-        %span (17)
+        %span
     %dd<>
       %a#show-lf{:href => "#show-lf"}
         LF
-        %span (21)
+        %span
     %dd<>
       %a#show-cf{:href => "#show-cf"}
         CF
-        %span (12)
+        %span
     %dd<>
       %a#show-rf{:href => "#show-rf"}
         RF
-        %span (20)
+        %span
     %dd<>
       %a#show-dh{:href => "#show-dh"}
         DH
-        %span (2)
+        %span
   %dl#adjustments
     %dt Adjustments:
     %dd<
       %a#whos-in{:href => "#whos-in"}
         Who's In?
-        %span (63)
+        %span (#{whos_in_count})
     %dd<>
       %a#whos-out{:href => "#whos-out"}
         Who's Out?
-        %span (63)
+        %span (#{whos_out_count})
     %dd<>
       %a#whos-next{:href => "#whos-next"}
         Who's Next?
-        %span (38)
+        %span (#{whos_next_count})
 
 %ol#players
   - @players.each do |player|

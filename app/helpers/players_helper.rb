@@ -19,9 +19,25 @@ module PlayersHelper
     "p_h", "p_r", "p_er", "p_bb", "p_so", "era", "eraplus", "p_hr", "p_bf"
   ]
 
+  def wwar_hall_count
+    @players.select(&:wwar_status).size
+  end
+
+  def whos_next_count
+    @players.select(&:future_wwar).size
+  end
+
+  def whos_in_count
+    @players.select{|p| p.wwar_status && p.hof_status != 'hof'}.size
+  end
+
+  def whos_out_count
+    @players.select{|p| !p.wwar_status && p.hof_status == 'hof'}.size
+  end
+
   def player_class player
     [
-      player.pos,
+      "pos-#{player.pos}",
       player.hof_status || 'no_hof',
       (player.wwar_status ? 'wwar' : ''),
       (player.future_wwar ? 'future' : '')
