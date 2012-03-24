@@ -6,7 +6,7 @@
   %tr
     - columns.each do |col|
       %th
-        %ABBR{title: col.last}= col.first
+        %abbr{:title => col.last}= col.first
   %tr
     - values.each do |value|
       %td= value
@@ -16,7 +16,7 @@
   %tr
     - columns.each do |col|
       %th
-        %ABBR{title: col.last}= col.first
+        %abbr{:title => col.last}= col.first
   - rows.each do |values|
     %tr
       - values.each do |value|
