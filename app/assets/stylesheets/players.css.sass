@@ -74,13 +74,9 @@ header
     &:first-child
       margin-top: 0
 
-#players
+#players, #player
   padding: 20px
   background-color: #FFF
-
-#player
-  @extend #players
-  padding-bottom: 120px
 
 ol
   list-style: none
@@ -196,3 +192,20 @@ table
 
 #seasons-container
   overflow: auto
+
+#key
+  font-size: 12px
+  color: #999
+  margin: 120px 0 0
+  &:hover
+    color: #666
+    dt
+      color: #333
+  dt
+    display: inline
+    font-weight: bold
+    &:after
+      content: ':'
+  dd
+    +reset
+    display: inline

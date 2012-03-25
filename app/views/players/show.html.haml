@@ -41,3 +41,20 @@
           %tr
             - values.each do |value|
               %td= value
+  %dl#key
+    %dt wWAR
+    %dd Weighted Wins Above Replacement (adjusted for peak performance, playoff heroics, season length, etc.).
+    %dt WAR/pos
+    %dd WAR earned as an offensive/position player.
+    %dt WAR/p
+    %dd WAR earned as a pitcher.
+    %dt WAR/tot
+    %dd Combined WAR as offensive/position player and pitcher.
+    %dt WAR/162
+    %dd Total WAR adjusted for season length.
+    %dt WAE
+    %dd Wins Above Excellence (all single season WAR above 3.0*).
+    %dt WAM
+    %dd Wins Above MVP Level (all single season WAR above 3.0*).
+    %dt wWPA
+    %dd Weighted Postseason Win Probability Added.
